@@ -13,12 +13,15 @@ namespace MohawkGame2D
         /// <summary>
         ///     Setup runs once before the game loop begins.
         /// </summary>
+        
+        
+
         public void Setup()
         {
             Window.SetTitle("Interactive Lightbulb");
             Window.SetSize(400, 400);
-            
             Draw.SetLineSize(10);
+
         }
 
         /// <summary>
@@ -33,12 +36,18 @@ namespace MohawkGame2D
 
             
 
-            //Change background colour to a lighter gray and lightbulb colour to yellow.
+            //Change background and light colour
             if (Input.IsKeyboardKeyReleased(KeyboardKey.Down) == true )
             {
-                //Window.ClearBackground(220, 220, 220);
+                //Makes the background bright
+                Window.ClearBackground(220, 220, 220);
                 ///Makes the lightbulb yellow
                 Draw.SetFillColor(255, 255, 125);
+            }
+            else
+            {
+                //Makes the lightbulb black
+                Draw.SetFillColor(0, 0, 0);
             }
 
             //tug the cord down
@@ -52,9 +61,8 @@ namespace MohawkGame2D
                 Draw.Line(300, 0, 300, 300);
                 Draw.Ellipse(300, 300, 20, 40);
             }
-
-            //Change background colour back to dark gray
             
+
         }
     }
 
